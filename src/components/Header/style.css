@@ -1,7 +1,5 @@
 header {
-    max-width: 15%;
-    height: 100%!important;
-    float: left;
+    max-width: 100%!important;
     margin-left: 2px;
     position: relative;
     /* background-color: rgba(0, 0, 0, 0.2); */
@@ -9,9 +7,15 @@ header {
     /* background: linear-gradient(to top, transparent, rgb(39, 39, 39)); */
 }
 
-ul {
+.index-logout{
     display: flex;
     flex-direction: column;
+    margin: auto;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     margin: 0;
     width: 100%;
@@ -27,11 +31,10 @@ li > * {
     color: black;
 }
 nav{
-    float: left;
+
     display: inline;
     margin: 0;
     padding: 0;
-    margin-right: 10px;
     height: 100%;
 }
 
@@ -44,10 +47,9 @@ li {
 }
 
 .home {
-    font-family: 'Abril Fatface', cursive; 
     text-align: center;
     font-size: large;
-    font-weight: 1000;
+    font-weight: 600;
     font-size: 30px;
     text-decoration: none;
 }

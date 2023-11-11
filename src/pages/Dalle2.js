@@ -29,7 +29,7 @@ function Image() {
 
 
   return (
-    <Container className="App">
+    <Container className="text-container">
         <Form.Control
         className='input'
         as="textarea"

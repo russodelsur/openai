@@ -47,9 +47,11 @@ function Language4() {
       } 
     }
   return (
-    <Container className="App">
+    <Container className="text-container">
+      <div className='wrapper'>
         <h3 style={{margin: "1rem"}}>GPT-4 Turbo</h3>
-        <Button className='reset-button' variant="dark" onClick={() => addChat([])}>Reset</Button>
+        <Button className='reset-button' variant="primary" onClick={() => addChat([])}>Reset text</Button>
+        <ChatContainer chatHistory={chatHistory}/>
         <Form.Control
         className='input'
         as="textarea"
@@ -60,9 +62,9 @@ function Language4() {
         value={content}
         autoComplete="on"
       />
-        <Button style={{marginBottom: "1rem"}} variant="dark" onClick={() => OpenAI(content)}>{loading ? <>Loading..</> : <>Let the magic begin</>}</Button>
+        <Button style={{marginBottom: "1rem"}} variant="primary" onClick={() => OpenAI(content)}>{loading ? <>Loading..</> : <>Let the magic begin</>}</Button>
         <p style={{whiteSpace:"pre-line", padding:"2rem", color:"red",fontWeight:"600"}}>{error}</p>
-        <ChatContainer chatHistory={chatHistory}/>
+        </div>
     </Container>
   );
 }

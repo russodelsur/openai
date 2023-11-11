@@ -23,16 +23,6 @@ let user = auth?.user;
     <header>
       <nav>
         <ul>
-          <div>
-              {token ? (
-              <div>
-              <p>Welcome {user}</p>
-              <Button onClick={logout}>Logout</Button>
-              </div>
-              ) : (
-              <div />
-              )}
-         </div>
           <li>
             <Link to="/" id="home" className="home">The Oracle</Link>
           </li>
@@ -51,6 +41,16 @@ let user = auth?.user;
           <li>
           <Link to="/images_dall_e_3" id="dalle3" className="nav-button">IMAGE<br></br>dall_e_3</Link>
           </li>
+          <div>
+              {token ? (
+              <div className="index-logout">
+              <p>Welcome {user}</p>
+              <Button className="btn btn-warning" onClick={logout}>Logout</Button>
+              </div>
+              ) : (
+              <div />
+              )}
+         </div>
         </ul>
       </nav>
       </header>

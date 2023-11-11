@@ -56,10 +56,12 @@ function Language3() {
       setError(""); // reset error messages
     }
   return (
-    <Container className="App">
+    <Container className="text-container">
+        <div className='wrapper'>
         <h3 style={{margin: "1rem"}}>GPT-3.5 Turbo</h3>
-        <Button className='reset-button' variant="dark" onClick={() => resetButton()}>Reset</Button>
+        <Button className='reset-button' variant="dark" onClick={() => resetButton()}>Reset text</Button>
         <h5 style={{margin: "1rem"}}>THIS MODEL CAN FOLLOW UP ONE QUESTION AT THE TIME</h5>
+        <ChatContainer chatHistory={chatHistory}/>
         <Form.Control
         className='input'
         as="textarea"
@@ -72,7 +74,7 @@ function Language3() {
       />
         <Button style={{marginBottom: "1rem"}} variant="dark" onClick={() => OpenAI(content)}>{loading ? <>Loading..</> : <>Let the magic begin</>}</Button>
         <p style={{whiteSpace:"pre-line", padding:"2rem", color:"red",fontWeight:"600"}}>{error}</p>
-        <ChatContainer chatHistory={chatHistory}/>
+        </div>
     </Container>
   );
 }
