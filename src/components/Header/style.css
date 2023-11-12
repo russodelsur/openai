@@ -1,63 +1,34 @@
 header {
-    max-width: 100%!important;
-    margin-left: 2px;
     position: relative;
+    max-height: 70px;
     /* background-color: rgba(0, 0, 0, 0.2); */
-
     /* background: linear-gradient(to top, transparent, rgb(39, 39, 39)); */
 }
+.login-interface{
+    height: 100%;
+}
 
+.me-auto{
+    justify-content: space-evenly!important;
+    /* margin-right: 0!important; */
+}   
 .index-logout{
     display: flex;
-    flex-direction: column;
-    margin: auto;
-}
-
-ul {
-    display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin: 0;
-    width: 100%;
-    height: 100%;
 }
-ul > * {
-    padding: 1rem;
-}
-li > * {
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    color: black;
-}
-nav{
-
-    display: inline;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+.login-button{
+    right: 0!important;
+    margin-right: 0!important;
+    position: relative;
 }
 
-li {
-    margin: 0;
-    font-size: 1rem;
-    text-decoration: none;
-    list-style-type: none;
-    color: black;
+a{
+    color: grey!important;;
+    transition: color 1s!important;
 }
-
-.home {
-    text-align: center;
-    font-size: large;
-    font-weight: 600;
-    font-size: 30px;
-    text-decoration: none;
+a:hover{
+    color: white!important;
 }
-
-.nav-button{
-    text-decoration: none;
-    text-align: center;
-    font-size: large;
-    font-weight: 500;
-    font-size: 20px;
+.user-name{
+    color: white!important;
 }

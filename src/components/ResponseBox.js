@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CursorSVG from "./CursorSVG";
+import { Container } from "react-bootstrap";
 
 function ChatContainer({ chatHistory }) {
 const [displayResponse, setDisplayResponse] = useState("");
@@ -30,7 +31,8 @@ return () => clearInterval(intervalId);
 }, [chatHistory.length]);
 
 return (
-<div className="max-h-0">
+<Container className="container-chat">
+    <div className="force-overflow"></div>
     {chatHistory?.map((message, messageIndex) => (
     <div key={messageIndex}>
         {message?.role === "user" && (
@@ -58,7 +60,7 @@ return (
             )}
         </div>
         ))}
-    </div>
+    </Container>
 );
 }
 

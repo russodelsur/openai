@@ -56,12 +56,14 @@ function Language3() {
       setError(""); // reset error messages
     }
   return (
-    <Container className="text-container">
+        <Container className="container-gpt">
         <div className='wrapper'>
-        <h3 style={{margin: "1rem"}}>GPT-3.5 Turbo</h3>
-        <Button className='reset-button' variant="dark" onClick={() => resetButton()}>Reset text</Button>
-        <h5 style={{margin: "1rem"}}>THIS MODEL CAN FOLLOW UP ONE QUESTION AT THE TIME</h5>
-        <ChatContainer chatHistory={chatHistory}/>
+
+          <Container className='title'>
+            <h3 style={{margin: "1rem"}}>GPT-3.5 Turbo</h3>
+            <Button className='reset-button' variant="outline-danger" onClick={() => resetButton()}>Reset text</Button>
+          </Container>
+           <h6>This model can follow up one question at the time</h6>      
         <Form.Control
         className='input'
         as="textarea"
@@ -72,9 +74,11 @@ function Language3() {
         value={content}
         autoComplete="on"
       />
-        <Button style={{marginBottom: "1rem"}} variant="dark" onClick={() => OpenAI(content)}>{loading ? <>Loading..</> : <>Let the magic begin</>}</Button>
+        <Button style={{marginBottom: "1rem"}} variant="outline-light" onClick={() => OpenAI(content)}>{loading ? <>Loading..</> : <>Let the magic begin</>}</Button>
         <p style={{whiteSpace:"pre-line", padding:"2rem", color:"red",fontWeight:"600"}}>{error}</p>
-        </div>
+      </div>
+
+      <ChatContainer chatHistory={chatHistory}/>
     </Container>
   );
 }

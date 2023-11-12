@@ -59,12 +59,14 @@ const resetButton = () => {
   setError(""); // reset error messages
 }
   return (
-    <Container className="text-container">
+        <Container className="container-gpt">
         <div className='wrapper'>
-        <h3 style={{margin: "1rem"}}>GPT-3.5 Turbo</h3>
-        <h6>Serverless - it has a 10 second limit as default per request - don't ask anything difficult.</h6>
-        <Button className='reset-button' variant="primary" onClick={() => resetButton()}>Reset text</Button>
-        <ChatContainer chatHistory={chatHistory}/>
+
+          <Container className='title'>
+            <h3 style={{margin: "1rem"}}>GPT-3.5 Turbo</h3>
+            <Button className='reset-button' variant="outline-danger" onClick={() => resetButton()}>Reset text</Button>
+          </Container>
+          <h6>Serverless - it has a 10 second limit as default per request - don't ask anything difficult.</h6>
         <Form.Control
         className='input'
         as="textarea"
@@ -75,9 +77,11 @@ const resetButton = () => {
         value={content}
         autoComplete="on"
       />
-        <Button style={{marginBottom: "1rem"}} variant="primary" onClick={() => OpenAI(content)}>{loading ? <>Loading..</> : <>Let the magic begin</>}</Button>
+        <Button style={{marginBottom: "1rem"}} variant="outline-light" onClick={() => OpenAI(content)}>{loading ? <>Loading..</> : <>Let the magic begin</>}</Button>
         <p style={{whiteSpace:"pre-line", padding:"2rem", color:"red",fontWeight:"600"}}>{error}</p>
       </div>
+
+      <ChatContainer chatHistory={chatHistory}/>
     </Container>
   );
 }

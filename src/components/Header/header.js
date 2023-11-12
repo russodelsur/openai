@@ -1,13 +1,14 @@
 import React from "react";
 import "./style.css"
-import { Outlet, Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Button, Container, Navbar, Nav } from "react-bootstrap";
 import useAuth from "../../hooks/useAuth";
 
 const Layout = () => {
 
   const { auth } = useAuth();
   const { setAuth } = useAuth();
+  const navigate = useNavigate();
 
 let token = auth?.token;
 let user = auth?.user;
@@ -21,38 +22,30 @@ let user = auth?.user;
   return (
     <>
     <header>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/" id="home" className="home">The Oracle</Link>
-          </li>
-          <li>
-           <Link to="/language_gpt_3_serverless" id="3.5-turbo" className="nav-button">TEXT <br></br>gpt 3.5 serverless</Link>
-          </li>
-          <li>
-           <Link to="/language_gpt_3.5_turbo" id="3.5-turbo" className="nav-button">TEXT <br></br>gpt 3.5 turbo</Link>
-          </li>
-          <li>
-            <Link to="/language_gpt_4.0_turbo" id="4-turbo" className="nav-button">TEXT <br></br>gpt 4.0 turbo</Link>
-          </li>
-          <li>
-          <Link to="/images_dall_e_2" id="dalle2" className="nav-button">IMAGE<br></br>dall_e_2</Link>
-          </li>
-          <li>
-          <Link to="/images_dall_e_3" id="dalle3" className="nav-button">IMAGE<br></br>dall_e_3</Link>
-          </li>
-          <div>
+    <Navbar bg="dark" data-bs-theme="dark">
+      <Container>
+      <Navbar.Brand href="/">The Oracle</Navbar.Brand>
+      <Nav className="me-auto">
+          <Link to="/language_gpt_3_serverless" id="3.5-turbo" className="nav-link">GPT 3.5 S</Link>
+          <Link to="/language_gpt_3.5_turbo" id="3.5-turbo" className="nav-link">GPT 3.5</Link>
+          <Link to="/language_gpt_4.0_turbo" id="4-turbo" className="nav-link">GPT-4 TURBO</Link>
+          <Link to="/images_dall_e_2" id="dalle2" className="nav-link">DALL-E-2</Link>
+          <Link to="/images_dall_e_3" id="dalle3" className="nav-link">DALL-E-3</Link>
+         </Nav>
+         <div className="login-interface">
               {token ? (
               <div className="index-logout">
-              <p>Welcome {user}</p>
-              <Button className="btn btn-warning" onClick={logout}>Logout</Button>
+              <p className="user-name">Welcome <br></br>{user}</p>
+              <Button variant="outline-secondary" onClick={logout}>Logout</Button>
               </div>
               ) : (
-              <div />
+              <div>
+                <Button variant="outline-success" onClick={()=>navigate("/login")}>Login</Button>
+              </div>
               )}
          </div>
-        </ul>
-      </nav>
+        </Container>
+        </Navbar>   
       </header>
       <Outlet />
     </>

@@ -46,26 +46,35 @@ function Language4() {
         setLoading(false); // Stop loading
       } 
     }
+    const resetButton = () => {
+      addChat([])
+      setError(""); // reset error messages
+    }
   return (
-    <Container className="text-container">
-      <div className='wrapper'>
+    <Container className="container-gpt">
+    <div className='wrapper'>
+
+      <Container className='title'>
         <h3 style={{margin: "1rem"}}>GPT-4 Turbo</h3>
-        <Button className='reset-button' variant="primary" onClick={() => addChat([])}>Reset text</Button>
-        <ChatContainer chatHistory={chatHistory}/>
-        <Form.Control
-        className='input'
-        as="textarea"
-        type="textarea"
-        id="content"
-        name="content"
-        onChange={handleChange}
-        value={content}
-        autoComplete="on"
-      />
-        <Button style={{marginBottom: "1rem"}} variant="primary" onClick={() => OpenAI(content)}>{loading ? <>Loading..</> : <>Let the magic begin</>}</Button>
-        <p style={{whiteSpace:"pre-line", padding:"2rem", color:"red",fontWeight:"600"}}>{error}</p>
-        </div>
-    </Container>
+        <Button className='reset-button' variant="outline-danger" onClick={() => resetButton()}>Reset text</Button>
+      </Container>
+       <h6>No follow ups</h6>      
+    <Form.Control
+    className='input'
+    as="textarea"
+    type="textarea"
+    id="content"
+    name="content"
+    onChange={handleChange}
+    value={content}
+    autoComplete="on"
+  />
+    <Button style={{marginBottom: "1rem"}} variant="outline-light" onClick={() => OpenAI(content)}>{loading ? <>Loading..</> : <>Let the magic begin</>}</Button>
+    <p style={{whiteSpace:"pre-line", padding:"2rem", color:"red",fontWeight:"600"}}>{error}</p>
+  </div>
+
+  <ChatContainer chatHistory={chatHistory}/>
+</Container>
   );
 }
 
