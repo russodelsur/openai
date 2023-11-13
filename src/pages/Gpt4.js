@@ -70,7 +70,7 @@ function Language4() {
     autoComplete="on"
   />
     <Button style={{marginBottom: "1rem"}} variant="outline-light" onClick={() => OpenAI(content)}>{loading ? <>Loading..</> : <>Let the magic begin</>}</Button>
-    <p style={{whiteSpace:"pre-line", padding:"2rem", color:"red",fontWeight:"600"}}>{error}</p>
+    <p className='error-chat'>{error}</p>
   </div>
 
   <ChatContainer chatHistory={chatHistory}/>

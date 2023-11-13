@@ -69,7 +69,7 @@ return (
                 </Col>
             </Form.Group>
             <Button className='login-button' type="submit">Login</Button>
-                {errorMessage && <p>{errorMessage}</p>}
+            {errorMessage && <p className='error-message'>{errorMessage}</p>}
         </Form>
         </Card>
         {/* <h2>Login</h2> */}

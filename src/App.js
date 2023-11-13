@@ -26,13 +26,14 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+        <Route element={<PersistLogin />}>
           <Route index element={<Home />} />
           <Route path="/login" element={<Login/>} />
 
           <Route path="/unauthorized" element={<Unauthorized />} />
 
-              <Route element={<PersistLogin />}>
-                  <Route element={<RequireAuth allowedRoles={[roles.User, roles.Admin, roles.Ad]} />}>
+
+                  <Route element={<RequireAuth allowedRoles={[roles.Admin, roles.Ad]} />}>
                     <Route path="/language_gpt_3_serverless" element={<Language />} />
                   </Route>
 

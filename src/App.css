@@ -8,7 +8,12 @@
   margin-top: 70px!important;
   height: calc(100% - 70px)!important;
 }
-
+.container-unauthorized{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .container{
   margin: auto;
 }
@@ -46,7 +51,13 @@
   margin-bottom: auto!important;
   /* margin: auto!important; */
 }
-
+.error-message{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 36px;
+  max-width: 220px;
+  float: left;
+}
 
 @keyframes flicker {
   0% {
@@ -100,7 +111,7 @@ h6{
 
 /* width */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 6px;
 }
 
 /* Track */
@@ -123,16 +134,34 @@ h6{
 }
 
 .short-text { display: none; }
-
+.error-chat{
+  white-space: pre-line;
+  padding: 2rem;
+  color: red;
+  font-weight: 600;
+}
 @media (max-width: 1000px) {
   #root{
     padding: .3rem;
   }
   .input {
-    max-width: 80%;
+    padding: .5rem;
+    max-width: 95%;
+    height: 5rem;
+    max-height: 10rem;
+    font-size: .8rem;
+  }
+  .error-chat{
+    padding: .2rem;
   }
   .container-chat{
-    max-width: 80%;
+    max-width: 90%;
+  }
+  h6{
+    font-size: .8rem;
+  }
+  p{
+    font-size: .8rem;
   }
   a{
     font-size: .8rem!important;
