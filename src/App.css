@@ -137,8 +137,12 @@ h6{
   a{
     font-size: .8rem!important;
   }
-  button{
+  .log-out-button{
     font-size: .8rem!important;
+    margin: .3rem!important;
+  }
+  .user-name{
+    font-size: .7rem;
   }
   .short-text { display: inline-block; }
   .full-text { display: none; }

@@ -51,7 +51,7 @@ let user = auth?.user;
               {token ? (
               <div className="index-logout">
               <p className="user-name">Welcome <br></br>{user}</p>
-              <Button variant="outline-secondary" onClick={logout}>Logout</Button>
+              <Button className="log-out-button" variant="outline-secondary" onClick={logout}>Logout</Button>
               </div>
               ) : (
               <div>
