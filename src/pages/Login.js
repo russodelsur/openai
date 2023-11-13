@@ -48,14 +48,14 @@ const handleLogin = async (e) => {
 
 return (
     <Container className="container-sm">
-    <Card style={{ maxWidth: '25rem', margin:"auto", padding:"2rem" }}>
+    <Card style={{ maxWidth: '25rem', margin:"auto", padding:"2rem", alignItems:"center"}}>
         <Form onSubmit={handleLogin}>
-            <h2>Login   </h2>
+            <h2>Login</h2>
             <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                 <Form.Label column sm="4">
                 Username
                 </Form.Label>
-                <Col sm="7">
+                <Col sm="8">
                 <Form.Control type="text" placeholder="Username..." value={username} onChange={(e) => setUsername(e.target.value)} />
                 </Col>
             </Form.Group>
@@ -64,7 +64,7 @@ return (
                 <Form.Label column sm="4"  >
                 Password
                 </Form.Label>
-                <Col sm="7">
+                <Col sm="8">
                 <Form.Control type="password" placeholder="Password..." value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </Col>
             </Form.Group>
