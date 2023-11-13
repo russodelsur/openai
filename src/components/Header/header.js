@@ -35,8 +35,8 @@ let user = auth?.user;
               <span class="short-text">3.5</span>
             </Link>
           <Link to="/language_gpt_4.0_turbo" id="4-turbo" className="nav-link">
-              <span class="full-text">GPT 3.5 TURBO</span>
-              <span class="short-text">3.5</span>
+              <span class="full-text">GPT 4.0 TURBO</span>
+              <span class="short-text">4.0</span>
             </Link>
           <Link to="/images_dall_e_2" id="dalle2" className="nav-link">
               <span class="full-text">DALL-E-2</span>
