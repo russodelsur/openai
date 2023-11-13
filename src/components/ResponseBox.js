@@ -44,7 +44,7 @@ return (
         )}
         {messageIndex === chatHistory.length - 1 && message?.role === "assistant" && (
         <div className="chat-start">
-        <p style={{whiteSpace:"pre-line", padding:"2rem"}}>
+        <p style={{whiteSpace:"pre-line", padding:".5rem"}}>
         {displayResponse}
         {!completedTyping && <CursorSVG />}
         </p>
@@ -53,7 +53,7 @@ return (
             {message?.role === "assistant" &&
             messageIndex !== chatHistory.length - 1 && (
             <div className="chat-start">
-                    <p style={{whiteSpace:"pre-line", padding:"2rem"}}>
+                    <p style={{whiteSpace:"pre-line", padding:".5rem"}}>
             {message?.content}
             </p>
             </div>
