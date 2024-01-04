@@ -11,33 +11,23 @@ const Users = () => {
     useEffect(() => {
         let isMounted = true;
         const controller = new AbortController();
-        console.log("run once please")
         const getUsers = async () => {
             try {
-            //     const response = await axiosPrivate.get('/users', {
-            //         signal: controller.signal
-            //     });
-            //     console.log(response.data);
-            //     isMounted && setUsers(response.data);
-            // }
                 let result = await fetch(
                 ('/.netlify/functions/get_users'), {})
                 .then(response => response.text())
                 .then(data => {
-                    console.log(data);
                     let users=["paco"];
                     let info = JSON.parse(data)
                     let username = info.username;
                     users.push(username);
-                    console.log(username)
                     isMounted && setUsers(users);
                 })
 
 
 
             } catch (err) {
-                console.log(err);
-                // navigate('/login', { state: { from: location }, replace: true });
+                navigate('/login', { state: { from: location }, replace: true });
             }
         }
 

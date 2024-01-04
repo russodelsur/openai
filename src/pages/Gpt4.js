@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import ChatContainer from '../components/ResponseBox';
+import axios from 'axios';
+import useAuth from '../hooks/useAuth';
 const { Configuration, OpenAIApi } = require("openai");
 
 function Language4() {
@@ -9,6 +11,7 @@ function Language4() {
   const [loading, setLoading] = useState(false);
   const [chatHistory, addChat] = useState([]);
   const [error, setError] = useState();
+  const { auth } = useAuth();
 
   const handleChange = event => {
     setMessage(event.target.value);
@@ -35,8 +38,22 @@ function Language4() {
     let arrayOutput = chatHistory;
     arrayOutput.push(completion.data.choices[0].message);
 
+    const usage = completion.data.usage;
+    const username = auth?.user;
+      try {
+        await axios.post('/.netlify/functions/userExperience', 
+        JSON.stringify({username, usage}),
+            {
+                headers: { 'Content-Type': 'application/json' },
+                withCredentials: true
+            }
+        );
+    } catch (e) {
+        if (e.response) {
+          console.log(e.response.data.message);
+    }
+  }
     addChat(arrayOutput);
-
     setLoading(false); // Stop loading
     setError(""); // reset error message
        }

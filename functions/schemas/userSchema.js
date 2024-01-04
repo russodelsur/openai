@@ -15,8 +15,11 @@ const User = new mongoose.Schema({
         type: String,
         required: true,
     },
+    usage: {
+        type: Object,
+        required: true,
+    },
     refreshToken: [String]
-    
 },{
     // Make Mongoose use Unix time (seconds since Jan 1, 1970)
     timestamps: true

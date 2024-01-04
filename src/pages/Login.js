@@ -31,7 +31,7 @@ const handleLogin = async (e) => {
     const { token, user, role } = response.data.user;
 
     setAuth({ user, role, token });
-    console.log(token)
+
     localStorage.setItem("token", token);
     setUsername('');
     setPassword('');
