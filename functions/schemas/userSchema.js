@@ -17,7 +17,7 @@ const User = new mongoose.Schema({
     },
     usage: {
         type: Object,
-        required: true,
+        required: false,
     },
     refreshToken: [String]
 },{

@@ -30,6 +30,8 @@ function Image() {
     const resetButton = () => {
       addChat([])
       setError(""); // reset error messages
+      console.log(chatHistory)
+      setLoading(false);
     }
 
   return (
