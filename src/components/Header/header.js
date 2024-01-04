@@ -16,7 +16,6 @@ let user = auth?.user;
   const logout = () => {
     localStorage.removeItem('token');
     setAuth( null );
-    console.log(token, user)
     };
 
   return (

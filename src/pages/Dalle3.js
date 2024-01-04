@@ -22,8 +22,7 @@ function ImageDalle() {
         n: 1,
         size: "1024x1024",
       });
-      // console.log(response.data.choices[0].message);
-      // console.log(response.data)
+
       setData(response);
     }
 
