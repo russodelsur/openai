@@ -56,6 +56,7 @@ function Language3() {
       } catch (e) {
           if (e.response) {
             console.log(e.response.data.message);
+            console.log(e)
       }
     }
 

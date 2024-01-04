@@ -19,7 +19,7 @@ const handler = async (event, context) => {
     context.callbackWaitsForEmptyEventLoop = false;
     const { username, usage } = JSON.parse(event.body);
     const userUsing = await User.findOne({ username });
-    
+
     if (!userUsing) {         
         return {
         statusCode: 401,
@@ -29,7 +29,7 @@ const handler = async (event, context) => {
 
      if (typeof userUsing.usage === 'object' && Object.keys(userUsing.usage).length === 0) {
         userUsing.usage = usage;
-        const result = await userUsing.save();
+        await userUsing.save();
         return {
             statusCode: 200,
             body: JSON.stringify({ message: 'User usage posted successfully!' })
@@ -41,7 +41,7 @@ const handler = async (event, context) => {
         let total = info.total_tokens + usage.total_tokens;
         let usageUpdate = {prompt_tokens: prompt, completion_tokens: completion, total_tokens: total};
         userUsing.usage = usageUpdate;
-        const result = await userUsing.save();
+        await userUsing.save();
         return {
             statusCode: 200,
             body: JSON.stringify({ message: 'User usage posted successfully!' })
