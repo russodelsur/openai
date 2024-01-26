@@ -33,7 +33,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+      "globals": {
+      "self": "readonly"
+      }
   },
   "browserslist": {
     "production": [

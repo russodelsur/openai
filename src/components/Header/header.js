@@ -26,24 +26,24 @@ let user = auth?.user;
       <Navbar.Brand href="/">The<br></br> Oracle</Navbar.Brand>
       <Nav className="me-auto">
           <Link to="/language_gpt_3_serverless" id="3.5-turbo" className="nav-link">
-            <span class="full-text">GPT 3.5 S</span>
-            <span class="short-text">3.5S</span>
+            <span className="full-text">GPT 3.5 S</span>
+            <span className="short-text">3.5S</span>
             </Link>
           <Link to="/language_gpt_3.5_turbo" id="3.5-turbo" className="nav-link">
-              <span class="full-text">GPT 3.5 TURBO</span>
-              <span class="short-text">3.5</span>
+              <span className="full-text">GPT 3.5 TURBO</span>
+              <span className="short-text">3.5</span>
             </Link>
           <Link to="/language_gpt_4.0_turbo" id="4-turbo" className="nav-link">
-              <span class="full-text">GPT 4.0 TURBO</span>
-              <span class="short-text">4.0</span>
+              <span className="full-text">GPT 4.0 TURBO</span>
+              <span className="short-text">4.0</span>
             </Link>
           <Link to="/images_dall_e_2" id="dalle2" className="nav-link">
-              <span class="full-text">DALL-E-2</span>
-              <span class="short-text">E-2</span>
+              <span className="full-text">DALL-E-2</span>
+              <span className="short-text">E-2</span>
             </Link>
           <Link to="/images_dall_e_3" id="dalle3" className="nav-link">
-              <span class="full-text">DALL-E-3</span>
-              <span class="short-text">E-3</span>
+              <span className="full-text">DALL-E-3</span>
+              <span className="short-text">E-3</span>
             </Link>
          </Nav>
          <div className="login-interface">
