@@ -15,6 +15,7 @@ function ChatContainer({ chatHistory }) {
         const stringResponse = chatHistory[chatHistory.length - 1]?.content;
         setDisplayResponse(stringResponse);
         setCompletedTyping(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [chatHistory.length]);
 
     return (
