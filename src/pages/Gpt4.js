@@ -31,7 +31,7 @@ function Language4() {
 
     
    try{ const completion = await openai.createChatCompletion({
-      model: "gpt-4-1106-preview",
+      model: "gpt-4o",
       messages: message.messages,
     });
     
