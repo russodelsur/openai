@@ -75,7 +75,6 @@ function Language4() {
         <h3 style={{margin: "1rem"}}>GPT-4 Turbo</h3>
         <Button className='reset-button' variant="outline-danger" onClick={() => resetButton()}>Reset text</Button>
       </Container>
-       <h6>No follow ups</h6>      
     <Form.Control
     className='input'
     as="textarea"
@@ -87,7 +86,7 @@ function Language4() {
     autoComplete="on"
   />
     <Button style={{marginBottom: "1rem"}} variant="outline-light" onClick={() => OpenAI(content)}>{loading ? <>Loading..</> : <>Let the magic begin</>}</Button>
-    <p className='error-chat'>{error}</p>
+    <p style={{padding:".1rem"}} className='error-chat'>{error}</p>
   </div>
 
   <ChatContainer chatHistory={chatHistory}/>
