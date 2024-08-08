@@ -35,7 +35,7 @@ function Language3() {
     }
     
    try{ const completion = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
+      model: "gpt-4o-mini",
       messages: message.messages,
     });
 
@@ -81,7 +81,7 @@ function Language3() {
         <div className='wrapper'>
 
           <Container className='title'>
-            <h3 style={{margin: "1rem"}}>GPT-3.5 Turbo</h3>
+            <h3 style={{margin: "1rem"}}>gpt-4o-mini</h3>
             <Button className='reset-button' variant="outline-danger" onClick={() => resetButton()}>Reset text</Button>
           </Container>
            <h6>This model can follow up one question at the time</h6>      
