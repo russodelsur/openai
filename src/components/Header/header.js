@@ -30,7 +30,7 @@ let user = auth?.user;
             <span class="short-text">3.5S</span>
             </Link>
           <Link to="/language_gpt_3.5_turbo" id="3.5-turbo" className="nav-link">
-              <span class="full-text">GPT 3.5 TURBO</span>
+              <span class="full-text">gpt-4o-mini</span>
               <span class="short-text">3.5</span>
             </Link>
           <Link to="/language_gpt_4.0_turbo" id="4-turbo" className="nav-link">
@@ -38,11 +38,11 @@ let user = auth?.user;
               <span class="short-text">4.0</span>
             </Link>
           <Link to="/images_dall_e_2" id="dalle2" className="nav-link">
-              <span class="full-text">DALL-E-2</span>
+              <span class="full-text">o1 - Smart Model</span>
               <span class="short-text">E-2</span>
             </Link>
           <Link to="/images_dall_e_3" id="dalle3" className="nav-link">
-              <span class="full-text">DALL-E-3</span>
+              <span class="full-text">GPT-4 Turbo</span>
               <span class="short-text">E-3</span>
             </Link>
          </Nav>
