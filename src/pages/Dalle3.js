@@ -30,7 +30,7 @@ function Language4() {
 
     try {
       const completion = await openai.createChatCompletion({
-        model: "o3-mini-2025-01-31",
+        model: "o3-2025-04-16",
         messages: message.messages,
       });
 
@@ -71,7 +71,7 @@ function Language4() {
       <div className="wrapper">
         <Container className="title">
           <h3 style={{ margin: "1rem" }}>
-            o3-mini-2025-01-31 - best for coding
+            o3-2025-04-16 - best for coding - Reasoning
           </h3>
           <Button
             className="reset-button"
