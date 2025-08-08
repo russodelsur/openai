@@ -30,7 +30,7 @@ function Language4() {
 
     try {
       const completion = await openai.createChatCompletion({
-        model: "chatgpt-4o-latest",
+        model: "gpt-5-mini-2025-08-07",
         messages: message.messages,
       });
 
@@ -70,7 +70,7 @@ function Language4() {
     <Container className="container-gpt">
       <div className="wrapper">
         <Container className="title">
-          <h3 style={{ margin: "1rem" }}>GPT-4 Turbo</h3>
+          <h3 style={{ margin: "1rem" }}>o5 - Mini</h3>
           <Button
             className="reset-button"
             variant="outline-danger"

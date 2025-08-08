@@ -31,7 +31,7 @@ function Language4() {
 
     
    try{ const completion = await openai.createChatCompletion({
-      model: "o1-preview",
+      model: "gpt-5-2025-08-07",
       messages: message.messages,
     });
     
@@ -72,7 +72,7 @@ function Language4() {
     <div className='wrapper'>
 
       <Container className='title'>
-        <h3 style={{margin: "1rem"}}>o1-preview	- VERY PRICE - VERY SMART</h3>
+        <h3 style={{margin: "1rem"}}>O5 - Expensive</h3>
         <Button className='reset-button' variant="outline-danger" onClick={() => resetButton()}>Reset text</Button>
       </Container>
     <Form.Control
